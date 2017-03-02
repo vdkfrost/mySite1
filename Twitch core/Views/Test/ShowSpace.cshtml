@@ -1,0 +1,99 @@
+﻿@model Twitch_core.Models.UserViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../Content/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    @Html.
+    @using (Html.BeginForm())
+    {
+        if (!Model.exist)
+        {
+            <div class="usual-block" style="padding-top: 70px; background-size: cover; background-position: 50%; background-color: white">
+                <div>
+                    <img src="../../images/svg/404.svg" style="width: 400px; margin: -50px 50% 0px; left: -200px; position: relative;" />
+                    @if (ViewBag.userNotStated)
+                    {
+                        <span style="font: 18px 'PT Sans'; display: table; margin: auto;">Похоже, что в адресной строке вы не указали имя пользователя</span>
+                    }
+                    else
+                    {
+                        <span style="font: 18px 'PT Sans'; display: table; margin: auto;">Стример с именем пользователя @ViewBag.requestedUser не найден</span>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="usual-block" style="padding-top: 70px; background-size: cover; background-position: 50%; background-color: white; background-image: url(../../images/backgrounds/back10.jpg)">
+                @if (Model.twitch.user != null)
+                {
+                    <table id="_twitchTable">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="social">
+                                        <a id="_twicthUserLink" href="@Model.twitch.user["_links"].AsBsonDocument["self"]">
+                                            <img src="../../images/svg/twitch-icon.svg" />
+                                        </a>
+                                        <a id="_twitchUserSSLink" href="/users/@ViewBag.requestedUser/bio">
+                                            <img src="../../images/logo/streamer-space-logo.PNG" />
+                                        </a>
+                                    </div>
+                                    <img src="@Model.twitch.user["logo"].AsString" class="user-image" />
+                                    <div style="float: left; margin-left: 10px; padding-top: 8px;">
+                                        <a href="@Model.twitch.user["_links"].AsBsonDocument["self"]" class="user-name">@Model.twitch.user["display_name"].AsString</a>
+                                        @Html.Label("Транслирует " + Html.ActionLink(Model.twitch.channel["game"].AsString, "https://twitch.tv/directory/game/" + Model.twitch.channel["game"].AsString), new KeyValuePair<string, string>("class", "stream-status"));
+                                    </div>
+                                </td>
+                                <td class="viewers">
+                                    @if (Model.twitch.stream != null)
+                                    {
+                                        Html.Label(Model.twitch.stream["viewers"].AsInt32.ToString("N0"));
+                                    }
+                                </td>
+                                <td class="views">
+                                    @Html.Label(Model.twitch.stream["views"].AsInt32.ToString("N0"));
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3" class="stream">
+                                    <iframe src="@Html.Encode("https://player.twitch.tv/?channel=" + Model.twitch.user["name"].AsString)" frameborder="0" allowfullscreen="true" scrolling="no" style="width: 100%; height: 100%"></iframe>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3" class="chat">
+                                    <iframe src="@Html.Encode("https://www.twitch.tv/" + Model.twitch.user["name"].AsString + "/chat?popout=")" frameborder="0" scrolling="no" style="width: 100%; height: 100%; margin-top: 3px"></iframe>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </div>
+        }
+    }
+</body>
+</html>
+
+<asp:ScriptManager runat="server">
+    <Scripts>
+        <asp:ScriptReference Path="~/Scripts/actions.js" />
+        <asp:ScriptReference Path="~/Scripts/jquery-1.10.2.min.js" />
+    </Scripts>
+</asp:ScriptManager>
+
+<uc:fixedPanel runat="server"></uc:fixedPanel>
+<uc:footer runat="server"></uc:footer>
+
+

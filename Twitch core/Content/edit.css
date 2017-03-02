@@ -1,0 +1,268 @@
+﻿.canvas {
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0px 0px 50px 0px;
+    box-sizing: border-box;
+    background-color: rgb(235, 235, 235);
+}
+
+    .canvas .options {
+        width: 100%;
+        height: 60px;
+        background-color: whitesmoke;
+        padding-left: 20px;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 50px rgba(45, 46, 51, 0.1);
+        position: relative;
+    }
+
+        .canvas .options a {
+            margin: 23px 20px 0px;
+            padding-bottom: 3px;
+            display: block;
+            float: left;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: 2px solid transparent;
+            border-width: 0px 0px 2px 0px;
+            font: 13px 'Source Sans Pro';
+            text-transform: uppercase;
+        }
+
+            .canvas .options a.selected {
+                color: darkorange;
+                border-color: darkorange;
+            }
+
+            .canvas .options a:hover {
+                color: darkorange;
+                border-color: darkorange;
+            }
+
+    .canvas .option-content {
+        border-spacing: 0px;
+        border-radius: 2px;
+        width: 100%;
+    }
+
+        .canvas .option-content tr:first-child td {
+            padding-top: 50px;
+        }
+
+        .canvas .option-content td {
+            padding: 20px 0px 0px;
+            box-sizing: border-box;
+            vertical-align: top;
+            background-color: rgb(235, 235, 235);
+        }
+
+            .canvas .option-content td .user-image {
+                width: 150px;
+                background-color: white;
+                padding: 10px;
+                box-sizing: border-box;
+                border-radius: 2px;
+                margin-bottom: 4px;
+            }
+
+            .canvas .option-content td .upload-btn {
+                width: 150px;
+                background-color: darkorange;
+                color: white;
+                margin: 0px;
+            }
+
+            .canvas .option-content td input[type="password"] {
+                display: block;
+                margin-bottom: 10px;
+                width: 250px;
+            }
+
+            .canvas .option-content td .option-info {
+                text-align: left;
+                padding: 0px;
+                margin-bottom: 2px;
+                font-size: 12px;
+            }
+
+            .canvas .option-content td .option-hint {
+                text-align: left;
+                padding: 5px 0px;
+                font: 12px Trebuchet MS;
+                color: gray;
+                margin-left: 2px;
+            }
+
+            .canvas .option-content td textarea {
+                min-width: 600px;
+                max-width: 100%;
+                min-height: 200px;
+                max-height: 200px;
+                padding: 10px;
+                box-sizing: border-box;
+                font: 13px 'PT Sans';
+            }
+
+            .canvas .option-content td span {
+                font: 15px 'PT Sans';
+                padding: 0px 20px;
+                display: block;
+                text-align: right;
+            }
+
+            .canvas .option-content td input {
+                font: 12px 'PT Sans';
+                padding: 5px;
+                box-sizing: border-box;
+                width: 200px;
+                background-color: white;
+                border: 1px solid rgb(180, 180, 180);
+                display: block;
+            }
+
+                .canvas .option-content td input[readonly] {
+                    background-color: rgb(240, 240, 240);
+                }
+
+            .canvas .option-content td:first-child {
+                width: 190px;
+            }
+
+                .canvas .option-content td:first-child span {
+                    margin-top: 3px;
+                }
+
+    .canvas .connections {
+        border-spacing: 0px;
+        border-radius: 2px;
+        padding: 0px 40px;
+        margin: auto;
+    }
+
+        .canvas .connections tr:first-child td {
+            padding-top: 50px;
+        }
+
+        .canvas .connections td {
+            padding: 20px 10px;
+            box-sizing: border-box;
+            vertical-align: top;
+            background-color: rgb(235, 235, 235);
+        }
+
+            .canvas .connections td .connection {
+                width: 200px;
+                height: 330px;
+                border-radius: 5px;
+                overflow: hidden;
+                background-color: white;
+                box-shadow: 0px 0px 10px rgba(45, 46, 51, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+            }
+
+                .canvas .connections td .connection:hover {
+                    box-shadow: 0px 0px 10px rgba(45, 46, 51, 0.7);
+                }
+
+                .canvas .connections td .connection.twitch {
+                    background-color: #7d5bbe;
+                }
+
+                    .canvas .connections td .connection.twitch .button {
+                        background-color: #7d5bbe;
+                        border: 1px solid #7d5bbe !important;
+                    }
+
+                        .canvas .connections td .connection.twitch .button:hover {
+                            border-color: white !important;
+                            box-shadow: 0px 0px 10px #7d5bbe;
+                        }
+
+                .canvas .connections td .connection.vkontakte {
+                    background-color: #507299;
+                }
+
+                    .canvas .connections td .connection.vkontakte .image-hood img {
+                        background-color: white;
+                        height: 120%;
+                        margin: -15px -10px;
+                    }
+
+                    .canvas .connections td .connection.vkontakte .button {
+                        background-color: #507299;
+                        border-color: #507299 !important;
+                    }
+
+                        .canvas .connections td .connection.vkontakte .button:hover {
+                            border-color: white !important;
+                            box-shadow: 0px 0px 10px #507299;
+                        }
+
+                .canvas .connections td .connection.youtube {
+                    background-color: #e62117;
+                }
+
+                    .canvas .connections td .connection.youtube .image-hood img {
+                        background-color: white;
+                        height: 120%;
+                        margin: -15px -5px;
+                    }
+
+                    .canvas .connections td .connection.youtube .button {
+                        background-color: #e62117;
+                        border: 1px solid #e62117 !important;
+                    }
+
+                        .canvas .connections td .connection.youtube .button:hover {
+                            border-color: white !important;
+                            box-shadow: 0px 0px 10px #e62117;
+                        }
+
+                .canvas .connections td .connection .name {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    font: 13px 'Roboto';
+                    color: white;
+                    padding: 10px 0px;
+                    position: relative;
+                }
+
+                .canvas .connections td .connection .image-hood {
+                    width: 200px;
+                    height: 190px;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 40px;
+                    box-sizing: border-box;
+                }
+
+                    .canvas .connections td .connection .image-hood img {
+                        height: 100%;
+                        margin: auto;
+                        display: block;
+                    }
+
+                .canvas .connections td .connection .info {
+                    background-color: white;
+                    height: 81px;
+                    padding: 15px;
+                }
+
+                .canvas .connections td .connection .option-info {
+                    display: block;
+                    color: rgb(150, 150, 150);
+                    font: 11px 'PT Sans';
+                    text-align: center;
+                    margin-top: -7px;
+                }
+
+                .canvas .connections td .connection .user-name {
+                    display: block;
+                    text-align: center;
+                    font: 15px 'Roboto';
+                    margin-bottom: 10px;
+                }

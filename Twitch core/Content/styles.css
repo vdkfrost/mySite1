@@ -1,0 +1,898 @@
+﻿@font-face {
+    src: url(../fonts/FiraSans-Bold.otf);
+    font-family: 'Fira Sans Bold';
+}
+
+@font-face {
+    src: url(../fonts/pt_sans.ttf);
+    font-family: 'PT Sans';
+}
+
+@font-face {
+    src: url(../fonts/pt_sans_b.ttf);
+    font-family: 'PT Sans Bold';
+}
+
+@font-face {
+    src: url(../fonts/src_sans.otf);
+    font-family: 'Source Sans Pro';
+}
+
+@font-face {
+    src: url(../fonts/src_sans_b.otf);
+    font-family: 'Source Sans Pro Bold';
+}
+
+@font-face {
+    src: url(../fonts/src_sans_light.otf);
+    font-family: 'Source Sans Pro Light';
+}
+
+@font-face {
+    src: url(../fonts/Roboto-Black.ttf);
+    font-family: 'Roboto Black';
+}
+
+@font-face {
+    src: url(../fonts/Roboto-Regular.ttf);
+    font-family: 'Roboto';
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(45, 46, 51);
+}
+
+* {
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    -moz-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    color: rgb(45, 46, 51);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+:focus {
+    outline: 0px;
+}
+
+ul {
+    margin-left: 20px;
+    font: 15px 'PT Sans';
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+    input[type="checkbox"] + label {
+        font: 13px 'PT Sans';
+    }
+
+        input[type="checkbox"] + label:before {
+            height: 14px;
+            width: 14px;
+            margin-right: 5px;
+            border-radius: 2px;
+            content: " ";
+            display: inline-block;
+            vertical-align: sub;
+            border: 2px solid white;
+            box-sizing: border-box;
+            background-color: rgb(220, 220, 220);
+        }
+
+    input[type="checkbox"]:checked + label:before {
+        background-color: darkorange;
+    }
+
+#_resultBox {
+    padding: 70px calc((100vw - 1000px)/2) 20px;
+    background-size: cover;
+    background-position: 50%;
+    background-image: url(/images/backgrounds/back9.jpg);
+}
+
+.full-width {
+    display: block;
+    width: 100%;
+}
+
+.page-content {
+    min-height: calc(100vh - 145px);
+}
+
+.half-width {
+    display: block;
+    width: 50%;
+}
+
+.usual-block {
+    display: block;
+    padding: 60px calc((100vw - 1000px)/2);
+    box-sizing: border-box;
+}
+
+.main-part-hint {
+    display: block;
+    margin: 20px 0px;
+    border: 1px solid darkorange;
+    border-width: 0px 0px 0px 5px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    font: 13px 'PT Sans';
+}
+
+.error404 {
+    background-color: white;
+    display: table;
+    margin: auto;
+    border-radius: 3px;
+    padding: 120px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+    .error404 .header {
+        font: 60px 'Roboto Black';
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .error404 .text {
+        font: 15px 'Roboto';
+        display: block;
+        text-align: center;
+    }
+
+        .error404 .text a {
+            color: darkorange;
+        }
+
+.button {
+    font: 13px 'PT Sans';
+    display: table;
+    margin: auto;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: 1px solid darkorange !important;
+    position: relative;
+}
+
+    .button.with-image {
+        padding: 10px 20px 10px 40px;
+        background-repeat: no-repeat;
+        background-size: 15px;
+        background-position: left+15px center;
+    }
+
+    .button.not-active {
+        background-color: rgb(150, 150, 150);
+        box-shadow: 0px 3px 0px rgb(120, 120, 120);
+    }
+
+    .button:not(.not-active) {
+        background-color: darkorange;
+        cursor: pointer;
+    }
+
+        .button:not(.not-active):hover {
+            border-color: rgba(255, 255, 255, 0.8) !important;
+            box-shadow: 0px 0px 10px darkorange;
+        }
+
+    .button.join {
+        background-image: url(../images/svg/partnership.svg);
+    }
+
+    .button.signup {
+        background-image: url(../images/svg/signup.svg);
+    }
+
+    .button.go-to-panel {
+        background-image: url(../images/svg/right-arrow.svg);
+    }
+
+    .button.home {
+        background-image: url(../images/svg/home.svg);
+    }
+
+    .button.login {
+        background-image: url(../images/svg/login.svg);
+    }
+
+.main-part-header {
+    display: block;
+    text-transform: uppercase;
+    font: 30px 'Source Sans Pro Bold';
+}
+
+.main-part-text {
+    display: block;
+    text-align: justify;
+    margin: 0px 0px 50px;
+    font: 15px 'PT Sans';
+}
+
+.main-current-info {
+    display: table;
+    margin: auto;
+}
+
+    .main-current-info .text {
+        text-transform: uppercase;
+        font: 15px 'Source Sans Pro Bold';
+        display: block;
+        text-align: center;
+    }
+
+    .main-current-info .info {
+        display: table;
+        margin: 5px auto;
+        font: 30px 'PT Sans Bold';
+        padding: 10px 40px 10px 20px;
+        color: white;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: right+15px center;
+    }
+
+.main-parts-usings {
+    width: 1000px;
+    height: 300px;
+    margin: 40px auto 120px;
+}
+
+    .main-parts-usings .part {
+        float: left;
+        width: 333px;
+        height: 300px;
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+
+        .main-parts-usings .part .circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: auto;
+            border: 15px solid;
+            background-color: rgb(45, 46, 51);
+        }
+
+            .main-parts-usings .part .circle .body {
+                background-color: rgb(45, 46, 51);
+                height: 155px;
+                border-radius: 140px 140px 0px 0px;
+                padding-top: 95px;
+                box-sizing: border-box;
+                background-position: center 30px;
+                background-size: 60px;
+                background-repeat: no-repeat;
+            }
+
+            .main-parts-usings .part .circle .value {
+                font: 40px 'PT Sans Bold';
+                color: white;
+                display: block;
+                text-align: center;
+            }
+
+        .main-parts-usings .part .description {
+            display: table;
+            margin: auto;
+            padding: 15px 25px;
+            text-transform: uppercase;
+            text-align: center;
+            font: 15px 'Source Sans Pro Bold';
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+.main-streamers .text {
+    display: block;
+    text-align: center;
+    font: 15px 'PT Sans Bold';
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.main-streamers #streamers {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+    .main-streamers #streamers tr td {
+        padding: 1px;
+        box-sizing: border-box;
+        width: 332px;
+        height: 186.75px;
+        display: inline-block;
+    }
+
+        .main-streamers #streamers tr td:hover .hover {
+            background: transparent;
+        }
+
+        .main-streamers #streamers tr td .nickname {
+            font: 15px 'PT Sans Bold';
+            position: absolute;
+            margin: 10px;
+            background-image: url(../images/svg/main-user.svg);
+            background-position: left center;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            padding-left: 20px;
+            color: white;
+            z-index: 6000;
+        }
+
+        .main-streamers #streamers tr td .viewers {
+            font: 15px 'PT Sans Bold';
+            position: relative;
+            float: right;
+            top: -215px;
+            right: 10px;
+            background-image: url(../images/svg/views-count.svg);
+            background-position: right center;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            padding-right: 20px;
+            color: white;
+        }
+
+        .main-streamers #streamers tr td img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            float: left;
+        }
+
+        .main-streamers #streamers tr td .hover {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(45, 46, 51, 0.5);
+            position: relative;
+            float: right;
+            top: -185px;
+        }
+
+.reg-info {
+    width: 400px;
+    margin: auto;
+    height: 500px;
+}
+
+    .reg-info .info-header {
+        display: block;
+        font: 13px 'PT Sans';
+    }
+
+    .reg-info .info-input {
+        padding: 10px 10px 10px 40px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        border: 2px solid darkorange;
+        border-width: 0px 0px 2px 0px;
+        margin: 3px 0px 0px;
+        font: 15px 'Source Sans Pro';
+        width: 100%;
+        background-position: left+10px center;
+        background-size: 20px;
+        background-repeat: no-repeat;
+    }
+
+    .reg-info .hint {
+        display: block;
+        margin: 10px 0px;
+        border-radius: 2px;
+        font: 11px 'PT Sans';
+        line-height: 15px;
+        background-color: rgba(255, 140, 0, 0.3);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+        .reg-info .hint.success {
+            background-image: url(/images/svg/checked.svg);
+            background-position: left+10px top+7px;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            padding-left: 37px;
+            background-color: transparent !important;
+        }
+
+    .reg-info #login-hint.hint {
+        margin-bottom: 10px;
+    }
+
+.engine {
+    font: 15px 'PT Sans';
+    text-align: center;
+    display: table;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: left center;
+    padding: 34px 0px 40px 90px;
+    box-sizing: border-box;
+}
+
+    .engine.success {
+        background-image: url(/images/svg/checked.svg);
+    }
+
+    .engine.error {
+        background-image: url(/images/svg/checked.svg);
+    }
+
+#_userTwitch {
+}
+
+    #_userTwitch #_twitchHeader {
+        display: table;
+        font: 25px 'PT Sans Bold';
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    #_userTwitch #_twitchTable {
+        border-spacing: 0px;
+        width: 100%;
+        background-color: #efeef1;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(20, 20, 20, 0.4);
+    }
+
+        #_userTwitch #_twitchTable .stream {
+            width: 100%;
+            height: 558px;
+            padding-top: 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        #_userTwitch #_twitchTable .chat {
+            height: 450px;
+        }
+
+        #_userTwitch #_twitchTable .social {
+            width: 25px;
+            height: 55px;
+            float: left;
+        }
+
+            #_userTwitch #_twitchTable .social a {
+                display: block;
+                width: 25px;
+                height: 25px;
+                padding: 5px;
+                box-sizing: border-box;
+                border-radius: 50%;
+            }
+
+                #_userTwitch #_twitchTable .social a img {
+                    height: 100%;
+                    display: table;
+                    margin: auto;
+                }
+
+            #_userTwitch #_twitchTable .social #_twicthUserLink {
+                background-color: #6441a4;
+                padding: 6px;
+                margin-bottom: 5px;
+            }
+
+            #_userTwitch #_twitchTable .social #_twitchUserSSLink {
+                background-color: darkorange;
+                padding: 6px;
+            }
+
+                #_userTwitch #_twitchTable .social #_twitchUserSSLink img {
+                    height: auto;
+                    width: 100%;
+                }
+
+        #_userTwitch #_twitchTable .user-image {
+            float: left;
+            width: 55px;
+            height: 55px;
+            margin-left: 5px;
+            border-radius: 50%;
+        }
+
+        #_userTwitch #_twitchTable .user-name {
+            margin-bottom: -3px;
+            font: 20px 'Source Sans Pro Bold';
+            display: block;
+            width: 100%;
+            color: rgb(60, 60, 60);
+        }
+
+            #_userTwitch #_twitchTable .user-name:hover {
+                color: darkorange;
+            }
+
+        #_userTwitch #_twitchTable .stream-status {
+            font: 13px 'Source Sans Pro';
+            color: rgb(150, 150, 150);
+        }
+
+            #_userTwitch #_twitchTable .stream-status a {
+                font: 13px 'Source Sans Pro Bold';
+                color: rgb(80, 80, 80);
+            }
+
+                #_userTwitch #_twitchTable .stream-status a:hover {
+                    color: darkorange;
+                }
+
+        #_userTwitch #_twitchTable .donation {
+            width: 13%;
+            padding-top: 2px;
+        }
+
+            #_userTwitch #_twitchTable .donation a {
+                border-radius: 3px;
+                padding: 8px 15px;
+                box-sizing: border-box;
+                float: right;
+                background-color: darkorange;
+                border: 1px solid darkorange;
+            }
+
+                #_userTwitch #_twitchTable .donation a:hover {
+                    border-color: rgba(255, 255, 255, 0.9);
+                    box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.6);
+                }
+
+                    #_userTwitch #_twitchTable .donation a:hover span {
+                    }
+
+                #_userTwitch #_twitchTable .donation a img {
+                    float: left;
+                    height: 20px;
+                    margin-left: 5px;
+                }
+
+                #_userTwitch #_twitchTable .donation a span {
+                    float: left;
+                    font: 13px 'PT Sans';
+                    margin-top: 1px;
+                    color: white;
+                }
+
+        #_userTwitch #_twitchTable .viewers {
+            width: 5%;
+            padding-left: 20px;
+        }
+
+            #_userTwitch #_twitchTable .viewers span {
+                font: 15px 'Source Sans Pro';
+                background-size: 13px;
+                background-repeat: no-repeat;
+                background-position: left center;
+                padding-left: 19px;
+                box-sizing: border-box;
+                letter-spacing: 0.5px;
+                color: red;
+                background-image: url(/images/logos/twitch/img/viewers-count.svg);
+            }
+
+        #_userTwitch #_twitchTable .views {
+            width: 5%;
+            padding: 0px 15px 0px 20px;
+        }
+
+            #_userTwitch #_twitchTable .views span {
+                font: 15px 'Source Sans Pro';
+                background-image: url(/images/logos/twitch/img/views-count.svg);
+                background-size: 13px;
+                background-repeat: no-repeat;
+                background-position: left center;
+                padding-left: 19px;
+                box-sizing: border-box;
+                letter-spacing: 0.5px;
+            }
+
+#login-panel {
+    width: 400px;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+    #login-panel input:not(.login-button) {
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 2px;
+        border: 2px solid darkorange;
+        border-width: 0px 0px 2px;
+        margin: -10px 0px 30px;
+        font: 20px 'Source Sans Pro';
+    }
+
+    #login-panel input.login-button {
+        width: 100%;
+        height: 40px;
+        margin: auto;
+        display: block;
+        border: none;
+        border-radius: 2px;
+        background-color: darkorange;
+        cursor: pointer;
+        text-transform: uppercase;
+        font: 13px Consolas;
+        font-weight: bold;
+        color: white;
+        background-position: 50%;
+        background-size: 30px;
+        background-repeat: no-repeat;
+    }
+
+        #login-panel input.login-button:hover {
+            background-color: #ffb04f;
+        }
+
+    #login-panel span {
+        font: 12px 'PT Sans';
+        display: block;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    #login-panel a {
+        font: 12px 'PT Sans';
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    #login-panel #hint {
+        background-color: rgba(255, 0, 0, 0.2);
+        margin: -20px 0px 10px;
+        border-radius: 2px;
+        overflow: hidden;
+        height: 37px;
+    }
+
+        #login-panel #hint span {
+            color: red;
+            border-radius: 2px;
+            padding: 10px;
+        }
+
+/* 
+    User panel START. Streamerspace.ru 
+*/
+
+.tfp {
+    height: 60px;
+    padding: 5px calc((100vw - 1000px)/2);
+    box-sizing: border-box;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+    .tfp a.logo img {
+        height: 40px;
+        margin: 5px 0px;
+        padding: 15px 20px;
+        box-sizing: border-box;
+        float: left;
+        background-color: darkorange;
+        border-radius: 2px;
+    }
+
+    .tfp .actions {
+        height: 100%;
+        float: right;
+        padding-top: 15px;
+    }
+
+        .tfp .actions a {
+            font: 14px 'PT Sans';
+            margin-right: 20px;
+            padding-bottom: 5px;
+            border: 2px solid transparent;
+            border-width: 0px 0px 2px 0px;
+        }
+
+            .tfp .actions a:hover {
+                border-color: darkorange;
+                color: darkorange;
+            }
+
+    .tfp .user-hood {
+        float: right;
+        height: 50px;
+        width: 150px;
+        display: block;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 0px 20px;
+    }
+
+        .tfp .user-hood:hover {
+            height: 210px;
+        }
+
+        .tfp .user-hood .option {
+            display: block;
+            width: 100%;
+            border: 2px solid transparent;
+            border-width: 0px 0px 2px 0px;
+            margin-top: 20px;
+        }
+
+            .tfp .user-hood .option span {
+                font: 14px 'PT Sans';
+                padding: 0px 0px 5px;
+                text-decoration: none;
+            }
+
+            .tfp .user-hood .option .enlight {
+                border: 2px solid transparent;
+                border-width: 0px 0px 2px 0px;
+            }
+
+        .tfp .user-hood .useroption {
+            height: 48px;
+            margin: 0px;
+        }
+
+            .tfp .user-hood .useroption:hover span {
+                color: darkorange;
+                border-color: darkorange;
+            }
+
+            .tfp .user-hood .useroption span {
+                float: right;
+                border: 2px solid transparent;
+                border-width: 0px 0px 2px 0px;
+                padding-top: 15px;
+            }
+
+            .tfp .user-hood .useroption img {
+                float: right;
+                height: 100%;
+                padding: 2.5px 0px;
+                box-sizing: border-box;
+                margin-left: 10px;
+                border-radius: 50%;
+            }
+
+        .tfp .user-hood .option:hover .enlight {
+            color: darkorange;
+            border-color: darkorange;
+        }
+
+        .tfp .user-hood .balance {
+            margin: -15px 0px -15px;
+            padding-bottom: 3px;
+        }
+
+            .tfp .user-hood .balance span {
+                display: block;
+                font-family: 'PT Sans';
+                color: rgb(45, 46, 51);
+                padding: 0px;
+                text-decoration: none;
+                border-bottom: 2px solid transparent;
+            }
+
+            .tfp .user-hood .balance .current {
+                font-size: 14px;
+                color: darkorange;
+                font-family: 'PT Sans Bold';
+            }
+
+                .tfp .user-hood .balance .current:before {
+                    content: 'Баланс: ';
+                    color: rgb(45, 46, 51);
+                    font-family: 'PT Sans';
+                }
+
+            .tfp .user-hood .balance .in-process {
+                font-size: 10px;
+                color: darkorange;
+                font-family: 'PT Sans Bold';
+                margin-top: -4px;
+                padding-bottom: 3px;
+            }
+
+                .tfp .user-hood .balance .in-process:before {
+                    content: 'В обработке: ';
+                    color: rgb(45, 46, 51);
+                    font-family: 'PT Sans';
+                }
+
+/* 
+    User panel END. Streamerspace.ru 
+*/
+
+/*
+    Bottom map START. Streamerspace.ru
+*/
+
+.mf {
+    background-color: rgb(45, 46, 51);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 145px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3) inset;
+}
+
+    .mf .table {
+        margin: auto;
+        width: 1000px;
+        display: table;
+    }
+
+        .mf .table .col {
+            float: left;
+        }
+
+            .mf .table .col .copy {
+                display: block;
+                color: white;
+                font: 11px 'PT Sans';
+            }
+
+            .mf .table .col .header {
+                color: white;
+                text-transform: uppercase;
+                font: 12px 'PT Sans Bold';
+                margin-bottom: 8px;
+                display: block;
+            }
+
+            .mf .table .col .content {
+            }
+
+                .mf .table .col .content span {
+                    color: rgb(100, 100, 100);
+                    font: 11px 'Roboto';
+                }
+
+                .mf .table .col .content .email {
+                    color: rgb(150, 150, 150);
+                    font: 12px 'Roboto';
+                    background-image: url(/images/icons/email/email.svg);
+                    background-position: 0px 3px;
+                    background-size: 10px;
+                    background-repeat: no-repeat;
+                    padding-left: 15px;
+                    margin-bottom: 15px;
+                    display: block;
+                }
+
+                    .mf .table .col .content .email:hover {
+                        color: white;
+                    }
+
+                .mf .table .col .content .email-name {
+                    display: block;
+                    margin-bottom: 2px;
+                }
+
+/*
+    Bottom map END. Streamerspace.ru
+*/
